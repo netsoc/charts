@@ -46,4 +46,15 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/iamd-0.1.0/iamd-0.1.0.tgz
     version: 0.1.0
+  website:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-09-20T18:21:04.783182031Z"
+    description: New Jekyll-based website
+    digest: 970c5c2785adbe4d7a1b5dcb15ecd8e97954868cf2a19d36395f24ab7031e6fc
+    name: website
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/website-0.1.0/website-0.1.0.tgz
+    version: 0.1.0
 generated: "2020-09-18T17:36:59.191177634Z"
