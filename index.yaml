@@ -253,6 +253,17 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/lxd8s-0.1.0/lxd8s-0.1.0.tgz
     version: 0.1.0
+  ma1sd:
+  - apiVersion: v2
+    appVersion: 2.4.0
+    created: "2020-09-29T01:39:24.853033012Z"
+    description: Federated Matrix Identity server
+    digest: 0dfc7c7f530f8deb9b9200d997d48545835b5e7be25a69b39157b672d653558a
+    name: ma1sd
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/ma1sd-0.1.0/ma1sd-0.1.0.tgz
+    version: 0.1.0
   website:
   - apiVersion: v2
     appVersion: latest
