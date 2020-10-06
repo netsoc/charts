@@ -225,6 +225,16 @@ entries:
   lxd8s:
   - apiVersion: v2
     appVersion: latest
+    created: "2020-10-06T19:44:04.749942721Z"
+    description: Deploy an LXD cluster on Kubernetes
+    digest: cd38cdc801c08b319c4ce3bcaa069df6eee083fcb5aa2a03d4f5a7071b99dbce
+    name: lxd8s
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/lxd8s-0.2.1/lxd8s-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2020-09-23T17:35:22.222526384Z"
     description: Deploy an LXD cluster on Kubernetes
     digest: 1b76323f9964d81331ac8fdc885a70f9396089f084af76e4ded43bf6a12fefbc
