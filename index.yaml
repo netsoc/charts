@@ -71,6 +71,17 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/accounts-0.1.0/accounts-0.1.0.tgz
     version: 0.1.0
+  docs:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-10-21T18:24:14.789345424Z"
+    description: MkDocs-based documentation site (Material theme)
+    digest: 81909d55d04fa9fa6f9425dc83db08e6aa8e93be2a779efe15fd6c9551b10f39
+    name: docs
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/docs-0.1.0/docs-0.1.0.tgz
+    version: 0.1.0
   iamd:
   - apiVersion: v2
     appVersion: 0.2.6
