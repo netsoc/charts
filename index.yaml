@@ -330,6 +330,17 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/ma1sd-0.1.0/ma1sd-0.1.0.tgz
     version: 0.1.0
+  shhd:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-10-24T18:42:14.068103672Z"
+    description: SSH server with virtual shell for access to Netsoc services
+    digest: b22b4f5fce38b2baed1d6e331b0c589f08dc7eb57f65e16ee2a879aae9df1cdc
+    name: shhd
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/shhd-0.1.0/shhd-0.1.0.tgz
+    version: 0.1.0
   website:
   - apiVersion: v2
     appVersion: latest
