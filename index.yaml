@@ -332,6 +332,16 @@ entries:
     version: 0.1.0
   shhd:
   - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2020-10-24T18:49:57.059934149Z"
+    description: SSH server with virtual shell for access to Netsoc services
+    digest: 1d57f774495ae69ffd6fd4a6ef34d444223a3dc78a5587f23b40c76466fdb543
+    name: shhd
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/shhd-0.1.1/shhd-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: latest
     created: "2020-10-24T18:42:14.068103672Z"
     description: SSH server with virtual shell for access to Netsoc services
