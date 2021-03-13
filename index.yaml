@@ -3,6 +3,16 @@ entries:
   accounts:
   - apiVersion: v2
     appVersion: 0.1.9
+    created: "2021-03-13T02:55:18.357963803Z"
+    description: Web GUI for account management
+    digest: f595bee2a035668c5ed93f2934020abaf008d0759ff4872dbe68621b5c6d3ff0
+    name: accounts
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/accounts-0.1.8/accounts-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 0.1.9
     created: "2021-02-04T18:42:42.118218991Z"
     description: Web GUI for account management
     digest: 4abeb059baf6bf359d3ca4b3a0ab15a4d5a81727b3f886d3c6317e0a93168bb2
