@@ -105,6 +105,21 @@ entries:
   iamd:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2021-03-16T03:30:47.394030326Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.x
+    description: Netsoc's IAM microservice
+    digest: 8fd836bc7db25d1521ac16cfc7148c4d1d6f1fd739983ef33326ad1f4e1600ec
+    name: iamd
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/iamd-0.4.1/iamd-0.4.1.tgz
+    version: 0.4.1
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2021-03-16T03:19:40.632401947Z"
     dependencies:
     - condition: postgresql.enabled
