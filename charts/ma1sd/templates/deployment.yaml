@@ -65,7 +65,7 @@ spec:
         - name: data
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ include "ma1sd.fullname" . }}
+            claimName: {{ if .Values.persistence.existingClaim }}{{ tpl .Values.persistence.existingClaim . }}{{- else }}{{ include "ma1sd.fullname" . }}{{- end }}
         {{- else }}
           emptyDir: {}
         {{- end }}
