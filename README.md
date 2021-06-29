@@ -1,5 +1,7 @@
 # Netsoc Helm charts
 
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netsoc)](https://artifacthub.io/packages/search?repo=netsoc)
+
 This repo collects all of our projects' Helm charts to one place. Some are pushed in from other repositories
 automatically.
 
