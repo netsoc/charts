@@ -94,6 +94,16 @@ entries:
   docs:
   - apiVersion: v2
     appVersion: latest
+    created: "2021-07-09T16:39:21.033356677Z"
+    description: MkDocs-based documentation site (Material theme)
+    digest: 6e1fa3f1669c72e76f11d1ca40d988ec598a6026387f58924f3aa20c2b3ed1c2
+    name: docs
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/docs-0.2.0/docs-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2021-07-09T16:33:28.699813207Z"
     description: MkDocs-based documentation site (Material theme)
     digest: 07835c344b09100a277ea6eb260103bb1d2545fc702cf49ae6c502b291df5b62
@@ -607,4 +617,4 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/webspaced-0.1.2/webspaced-0.1.2.tgz
     version: 0.1.2
-generated: "2021-07-09T16:33:28.700441439Z"
+generated: "2021-07-09T16:39:21.033627879Z"
