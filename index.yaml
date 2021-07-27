@@ -546,6 +546,16 @@ entries:
     version: 0.1.0
   shhd:
   - apiVersion: v2
+    appVersion: 0.1.5
+    created: "2021-07-27T19:14:11.9996204Z"
+    description: SSH server with virtual shell for access to Netsoc services
+    digest: d2ac305dd0a4b1c2a97b73d7c9e23f5d8fbbd577d2e67ec979cddc2d2711cd30
+    name: shhd
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/shhd-0.1.6/shhd-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
     appVersion: 0.1.4
     created: "2021-07-27T17:06:13.216436408Z"
     description: SSH server with virtual shell for access to Netsoc services
@@ -687,4 +697,4 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/webspaced-0.1.2/webspaced-0.1.2.tgz
     version: 0.1.2
-generated: "2021-07-27T17:06:13.216610115Z"
+generated: "2021-07-27T19:14:11.999801201Z"
