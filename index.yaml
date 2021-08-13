@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   accounts:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2021-08-13T19:22:43.922138284Z"
+    description: Web GUI for account management
+    digest: c90e7569f3d6b0a41a0bb9965e253b8c7230a559db505c99653d3b424be2b0a9
+    name: accounts
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/accounts-0.2.1/accounts-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 0.1.9
     created: "2021-03-13T02:55:18.357963803Z"
     description: Web GUI for account management
@@ -757,4 +767,4 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/webspaced-0.1.2/webspaced-0.1.2.tgz
     version: 0.1.2
-generated: "2021-08-13T18:39:08.766382944Z"
+generated: "2021-08-13T19:22:43.922424092Z"
