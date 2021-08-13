@@ -618,6 +618,16 @@ entries:
   website:
   - apiVersion: v2
     appVersion: latest
+    created: "2021-08-13T18:39:08.766155341Z"
+    description: New Jekyll-based website
+    digest: 745f582ebdf639a09e69005c0edda90fe16464f018d88aa59b833149724c724c
+    name: website
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/website-0.2.0/website-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: latest
     created: "2020-09-20T18:21:04.783182031Z"
     description: New Jekyll-based website
     digest: 970c5c2785adbe4d7a1b5dcb15ecd8e97954868cf2a19d36395f24ab7031e6fc
@@ -747,4 +757,4 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/webspaced-0.1.2/webspaced-0.1.2.tgz
     version: 0.1.2
-generated: "2021-07-30T17:15:28.356870561Z"
+generated: "2021-08-13T18:39:08.766382944Z"
