@@ -1,0 +1,142 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "webspaced.fullname" . }}
+  labels:
+    {{- include "webspaced.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "webspaced.selectorLabels" . | nindent 6 }}
+  serviceName: {{ include "webspaced.fullname" . }}
+  template:
+    metadata:
+    {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      labels:
+        {{- include "webspaced.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "webspaced.serviceAccountName" . }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: WSD_HTTP_LISTEN_ADDRESS
+              value: ':80'
+            - name: WSD_TRAEFIK_PROVIDER
+              value: kubernetes
+            - name: WSD_TRAEFIK_KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: WSD_TRAEFIK_WEBSPACED_URL
+              value: http://{{ include "webspaced.fullname" . }}.{{ .Release.Namespace }}
+          {{- if .Values.fwdService.enabled }}
+            - name: WSD_WEBSPACES_PORTS_KUBERNETES_SERVICE
+              value: {{ include "webspaced.fullname" . }}-forwarding
+          {{- end }}
+
+            {{- if .Values.secrets.iamToken }}
+            - name: WSD_IAM_TOKEN_FILE
+              value: /run/secrets/webspaced/iam_token.txt
+            {{- end }}
+            {{- if .Values.secrets.lxdKey }}
+            - name: WSD_LXD_TLS_CLIENT_KEY_FILE
+              value: /run/secrets/webspaced/lxd_client.key
+            {{- end }}
+            {{- if .Values.secrets.lxdTrust }}
+            - name: WSD_LXD_TLS_TRUST_PASSWORD_FILE
+              value: /run/secrets/webspaced/lxd_trust.txt
+            {{- end }}
+            {{- if .Values.secrets.traefikIAMToken }}
+            - name: WSD_TRAEFIK_IAM_TOKEN_FILE
+              value: /run/secrets/webspaced/traefik_iam_token.txt
+            {{- end }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          startupProbe:
+            httpGet:
+              path: /health
+              port: http
+            {{- toYaml .Values.startupProbe | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            {{- toYaml .Values.livenessProbe | nindent 12 }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: config
+              mountPath: /run/config
+            - name: secrets
+              mountPath: /run/secrets/webspaced
+        - name: kubelan
+          image: '{{ .Values.global.kubelan.image.repository }}:{{ .Values.global.kubelan.image.tag }}'
+          imagePullPolicy: {{ .Values.global.kubelan.image.pullPolicy }}
+          env:
+            - name: KL_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+            - name: KL_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+
+            - name: IFACE_IP
+              value: {{ .Values.staticIP | squote }}
+            - name: KL_HOOKS_UP
+              value: 'sh,-c,ip addr add $IFACE_IP dev $IFACE'
+          ports:
+            - name: http
+              containerPort: 8181
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            periodSeconds: 5
+          securityContext:
+            capabilities:
+              add: [NET_ADMIN]
+          volumeMounts:
+            - name: kubelan-config
+              mountPath: /run/config
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "webspaced.fullname" . }}
+        - name: secrets
+          secret:
+            secretName: {{ include "webspaced.fullname" . }}
+        - name: kubelan-config
+          configMap:
+          {{- if .Values.global.kubelan.externalConfigMap }}
+            name: {{ .Values.global.kubelan.externalConfigMap }}
+          {{- else }}
+            name: {{ include "webspaced.fullname" . }}-kubelan
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
