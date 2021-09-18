@@ -658,6 +658,16 @@ entries:
     version: 0.1.0
   webspaced:
   - apiVersion: v2
+    appVersion: 0.5.1
+    created: "2021-09-18T11:34:58.438957913Z"
+    description: Microservice for managing containerised webspaces
+    digest: 4b63981aad85ea09fe3ef11fccd56597b199e5c6ddaf2fa2ee7c39482f9295b1
+    name: webspaced
+    type: application
+    urls:
+    - https://github.com/netsoc/charts/releases/download/webspaced-0.2.8/webspaced-0.2.8.tgz
+    version: 0.2.8
+  - apiVersion: v2
     appVersion: 0.5.0
     created: "2021-07-30T17:15:28.356625057Z"
     description: Microservice for managing containerised webspaces
@@ -777,4 +787,4 @@ entries:
     urls:
     - https://github.com/netsoc/charts/releases/download/webspaced-0.1.2/webspaced-0.1.2.tgz
     version: 0.1.2
-generated: "2021-08-25T15:16:50.790572098Z"
+generated: "2021-09-18T11:34:58.439229817Z"
